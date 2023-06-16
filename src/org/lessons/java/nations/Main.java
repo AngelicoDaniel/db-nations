@@ -18,6 +18,7 @@ public class Main {
                     "FROM countries c\n" +
                     "JOIN regions r ON c.region_id = r.region_id\n" +
                     "JOIN continents co ON r.continent_id = co.continent_id\n" +
+                    "WHERE c.name LIKE '%ita%'\n" +
                     "ORDER BY c.name";
             // chiedo alla Connection di preparare lo statement
             try (PreparedStatement ps = connection.prepareStatement(sql)){
